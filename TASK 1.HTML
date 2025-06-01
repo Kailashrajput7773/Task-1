@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task 1 - Violet Web Page</title>
+  <style>
+    :root {
+      --primary-color: orange;
+      --background-light: violet;
+      --background-dark: rebeccapurple;
+      --text-light: #000;
+      --text-dark: #fff;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: var(--background-light);
+      color: var(--text-light);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: var(--background-dark);
+      color: var(--text-dark);
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: black;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .toggle-btn:hover {
+      background: var(--primary-color);
+      color: black;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease, background-color 0.3s;
+    }
+
+    .dark-mode .card {
+      background-color: #3a1768;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .button {
+      background-color: black;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .button:hover {
+      background-color: var(--primary-color);
+      color: black;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    .dark-mode footer {
+      background-color: #111;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .toggle-btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Theme</button>
+
+  <header>
+    <h1>Welcome to My Violet-Themed Internship Task</h1>
+    <p>HTML • CSS • JavaScript</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>About This Page</h2>
+      <p>This violet-themed page is built for the ApexPlanet internship Task 1, showcasing modern responsive web design, theme switching, and interactivity.</p>
+    </div>
+
+    <div class="card">
+      <h2>Image Example</h2>
+      <img src="https://via.placeholder.com/600x300.png?text=Violet+Theme+Image" alt="Task Image" />
+    </div>
+
+    <div class="card">
+      <h2>Useful Link</h2>
+      <p>Visit the <a href="https://www.apexplanet.in/internship/" target="_blank">ApexPlanet Internship Portal</a> for more details.</p>
+    </div>
+
+    <div class="card">
+      <h2>Interactive Button</h2>
+      <button class="button" onclick="showMessage()">Click Me!</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ApexPlanet Internship Task by [Your Name]</p>
+  </footer>
+
+  <script>
+    function showMessage() {
+      alert("🎉 Great job! You’ve interacted with the JavaScript feature!");
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
